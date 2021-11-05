@@ -29,36 +29,54 @@ function writeToLog(
     console.log(logEntries);
 }
 
-function add() {
+function calculateResult(calculationType) {
     const enteredNumber = getUserInput();
     const initialResult = currentResult;
-    currentResult += enteredNumber;
-    createAndWirteLog("+", initialResult, enteredNumber);
-    writeToLog("ADD", initialResult, enteredNumber, currentResult);
+    let mathOperator;
+    
+    if (
+        calculationType !== 'ADD' &&
+        calculationType !== 'SUBSTRACT' &&
+        calculationType !== 'MULTIPLY' &&
+        calculationType !== 'DIVIDE' ||
+        !enteredNumber
+    ) {
+        return;
+    }
+    
+    if(calculationType === 'ADD') {
+        currentResult += enteredNumber;
+        mathOperator = '+';
+    } else if(calculationType === 'SUBSTRACT') {
+        currentResult -= enteredNumber;
+        mathOperator = '-';
+    } else if(calculationType === 'MULTIPLY') {
+        currentResult *= enteredNumber;
+        mathOperator = '*';
+    } else if(calculationType === 'DIVIDE') {
+        currentResult /= enteredNumber;
+        mathOperator = '/';
+    }
+    
+    createAndWirteLog(mathOperator, initialResult, enteredNumber);
+    writeToLog(calculationType, initialResult, enteredNumber, currentResult);
+}
+
+
+function add() {
+    calculateResult('ADD');
 }
 
 function substract() {
-    const enteredNumber = getUserInput();
-    const initialResult = currentResult;
-    currentResult -= enteredNumber;
-    createAndWirteLog("-", initialResult, enteredNumber);
-    writeToLog("SUBSTRACT", initialResult, enteredNumber, currentResult);
+    calculateResult('SUBSTRACT');
 }
 
 function multiply() {
-    const enteredNumber = getUserInput();
-    const initialResult = currentResult;
-    currentResult *= enteredNumber;
-    createAndWirteLog("*", initialResult, enteredNumber);
-    writeToLog("MULTIPLY", initialResult, enteredNumber, currentResult);
+    calculateResult("MULTIPLY");
 }
 
 function divide() {
-    const enteredNumber = getUserInput();
-    const initialResult = currentResult;
-    currentResult /= enteredNumber;
-    createAndWirteLog("/", initialResult, enteredNumber);
-    writeToLog("DIVIDE", initialResult, enteredNumber, currentResult);
+    calculateResult("DIVIDE");
 }
 
 /* Create click event listeners for opreator buttons */
