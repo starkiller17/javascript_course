@@ -9,6 +9,7 @@ function sendHttpRequest(method, url, data) {
     
     return fetch(url, {
         method: method,
+        //body: data
         body: JSON.stringify(data),
         headers: {
             'Content-Type': 'application/json'
@@ -89,7 +90,12 @@ async function createPost(title, content) {
         title: title,
         body: content,
         userId: userId
-    }
+    };
+
+    const fd = new FormData(form);
+    // fd.append('title', title);
+    // fd.append('body', content);
+    fd.append('userId', userId);
     
     post_request = await sendHttpRequest(
         'POST', 
