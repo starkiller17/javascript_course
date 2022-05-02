@@ -1,4 +1,8 @@
-class Tooltip extends Component {
+import Component, { doSomething } from './Component.js';
+
+console.log('Tooltip running...');
+
+export class Tooltip extends Component {
     constructor(closeNotifierFunction, text, hostElementId) {
       super(hostElementId);
       this.closeNotifier = closeNotifierFunction;
