@@ -1,0 +1,15 @@
+{
+  "name": "modules-01-starting-project",
+  "version": "1.0.0",
+  "description": "JS Modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Said Mendez",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
