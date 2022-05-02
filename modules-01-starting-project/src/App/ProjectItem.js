@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-import {DOMHelper} from '../Utility/DomHelper.js';
+import {DOMHelper} from '../Utility/DOMHelper';
 // import { Tooltip } from './Tooltip.js';
 
 console.log('ProjectItem loaded...');
