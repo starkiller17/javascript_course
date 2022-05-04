@@ -1,7 +1,10 @@
+import * as _ from 'lodash';
 /* eslint-disable require-jsdoc */
 import {ProjectList} from './App/ProjectList.js';
 
 globalThis.DEFAULT_VALUE = 'SAID';
+
+console.log('Lodash: ', _.difference([7, 1], [1, 2]));
 
 class App {
   static init() {

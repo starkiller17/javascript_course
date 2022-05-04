@@ -1,5 +1,6 @@
 // Import NodeJS path package
 const path = require('path');
+const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -20,4 +21,7 @@ module.exports = {
       directory: './',
     },
   },
+  plugins: [
+    new CleanPlugin.CleanWebpackPlugin(),
+  ],
 };
