@@ -2,7 +2,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/app.js',
   output: {
     filename: 'app.js',
@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'assets', 'scripts'),
     publicPath: 'assets/scripts/',
   },
-  devtool: 'eval-cheap-module-source-map',
+  devtool: 'cheap-source-map',
   // get the index.html(root file).
   // This is because the html file is in the root dir, not in the assets,
   // and that is the reason why you cannot get that.
