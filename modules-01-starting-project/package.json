@@ -1,0 +1,25 @@
+{
+  "name": "modules-01-starting-project",
+  "version": "1.0.0",
+  "description": "JS Modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build:dev": "webpack-dev-server",
+    "build:prod": "webpack --config webpack.config.prod.js"
+  },
+  "author": "Said Mendez",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "eslint": "^8.14.0",
+    "eslint-config-google": "^0.14.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
