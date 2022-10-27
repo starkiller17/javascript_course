@@ -6,17 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Components</title>
   <script src="tooltip.js"></script>
+  <style>
+    div {
+      border: 2px solid orange;
+    }
+  </style>
 </head>
 <body>
+  
+  <template id="tooltip-template">
+    <slot>Some default</slot><span> (?)</span>
+  </template>
+
   <p>
-    <uc-tooltip>
+    <uc-tooltip text="Web components is a set of standards">
       Web Components
     </uc-tooltip>
     are awesome!
   </p>
 
+  <uc-tooltip></uc-tooltip>
+  <br>
   <uc-tooltip>
     Here we Go!
   </uc-tooltip>
+  <div>
+    This does not get the web component style
+  </div>
 </body>
 </html>
