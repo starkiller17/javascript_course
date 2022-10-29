@@ -6,9 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Components</title>
   <script src="tooltip.js"></script>
+  <script src="confirm-link.js"></script>
   <style>
-    div {
-      border: 2px solid orange;
+    * {
+      box-sizing: border-box;
+    }
+    
+    html {
+      --color-primary: #a4e6fc;
+    }
+
+    .highlight {
+      background-color: cyan;
+    }
+
+    uc-tooltip {
+      border: 1px solid blue;
+      padding-top: 0.15rem;
     }
   </style>
 </head>
@@ -19,19 +33,21 @@
   </template>
 
   <p>
+    Italic text...
     <uc-tooltip text="Web components is a set of standards">
-      Web Components
+      <span class="highlight">Web Components</span>
     </uc-tooltip>
     are awesome!
   </p>
 
-  <uc-tooltip></uc-tooltip>
-  <br>
-  <uc-tooltip>
+  <p>
+    <uc-tooltip></uc-tooltip>
+  </p>
+
+  <uc-tooltip class="important">
     Here we Go!
   </uc-tooltip>
-  <div>
-    This does not get the web component style
-  </div>
+  
+  <a is="uc-confirm-link" href="https://google.com">Google</a>
 </body>
 </html>

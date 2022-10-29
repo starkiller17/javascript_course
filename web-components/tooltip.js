@@ -11,14 +11,47 @@ class Tooltip extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         div {
+          font-weight: normal;
           background-color: black;
-          color: orange;
+          color: white;
           position: absolute;
+          top: 1.5rem;
+          left: 0.75rem;
           z-index: 10;
+          padding: 0.15rem;
+          border-radius: 3px;
+          box-shadow: 1px 1px 6px rgba(0,0,0,0.26);
         }
+
+        .highlight {
+          background-color: #690f0f;
+        }
+
+        ::slotted(.highlight) {
+          color: red;
+          border-bottom: 1px solid orange;
+        }
+
+        .icon {
+          background: black;
+          color: white;
+          padding: 0.15rem 0.5rem;
+          text-align: center;
+          border-radius: 50%;
+        }
+
+        :host(.important) {
+          background-color: var(--color-primary, pink);
+          padding: 0.15rem;
+        }
+
+        :host-context(p) {
+          font-weight: bold !important;
+        }
+
       </style>
       <slot>Some default message</slot>
-      <span> (?)</span>
+      <span class="icon">?</span>
       `;
     // Shadow DOM can be accessed before the element is added to the real DOM
     // this.shadowRoot.appendChild(template.content.cloneNode(true));
